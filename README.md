@@ -1,2 +1,4 @@
-# web-231
-Web Development 231
+# WEB 231 Enterprise JavaScript i
+## Contributors
+* Richard Krasso
+* Sarah Jean Baptiste

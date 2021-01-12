@@ -1,10 +1,16 @@
-/* Body Styling */
+/**
+    Title: site.css
+    Author: Sarah Jean Baptiste
+    Date: 01/12/2021
+    Description: Style sheet 
+*/
+
+/* Web-231's google font kit*/
 body{ 
-    font-family: 'Oswald', Verdana, Arial, sans-serif; 
-    margin: 50px 100px 0 100px; 
+    font-family: 'Oswald', Verdana, Arial, sans-serif;  
 }  
 
-/* Header's styling */
+/* Global styling for the Headers 1-4. */
 h1, h2, h3, h4{ 
     background-color: #3c275a; 
     color: white; 
@@ -12,22 +18,25 @@ h1, h2, h3, h4{
     padding: 10px; 
 } 
 
-/* Hyperlink's styling. */
+/* Global styling for anchor tags. */
 a{ 
     color: #453674; 
     text-decoration: none; 
 } 
 
+/* On hover, set background color to D6800 and text color of 4F3674 */
 a:hover{ 
     background-color: #d6a800; 
     color: #4f3674; 
 } 
 
+/* On visited, set text color of 3c275a. */
 a:visited{ 
     color:#3c275a 
 } 
 
+/* Container styling; sets the top margin to 50 pixels and the left and right margin to 100 pixels. */
 #container{
-    padding: 10px;
+    margin: 50px 100px 0 100px; 
 }
  

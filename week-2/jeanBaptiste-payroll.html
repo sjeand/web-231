@@ -1,0 +1,102 @@
+<!--
+  Title: assignment 1.3
+  Author: Sarah Jean Baptiste
+  Date: 01/11/2021
+  Description: index.html for web-231
+-->
+
+<!DOCTYPE html>
+<html lang = "en">
+
+  <!--Document header starts here.-->    
+  <head>
+    <title>Payroll</title>
+
+    <link rel="stylesheet" href="jeanBaptiste-payroll.css" type="text/css">
+    <link rel="stylesheet" href="../site.css" type="text/css">
+    <link rel="stylesheet" href="../global.css" type="text/css">
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">     
+  </head>
+
+    <!--Document Body starts here.-->    
+    <body>
+
+      <!--Place all HTML code underneath this div.-->
+      <div id="container">
+        <h1 id="payroll-header" class="app-header">Payroll System</h1>
+
+       <!--EMPLOYEE 1.-->  
+       <div id= "Employee-Record-1">
+          <h3>Employee record 1</h3>
+            <ul>
+                <li id=txtFirstNameLudwig></li>
+                <li id=txtLastNameBeethoven></li>
+                <li id=txtAddressLudwig></li>
+                <li id=txtHireDateLudwig></li>
+                <li id=txtPayRateLudwig></li>
+            </ul>
+        </div>
+
+        <!--EMPLOYEE 2.-->  
+        <div id= "Employee-Record-2">  
+          <h3>Employee record 2</h3>
+            <ul>
+                <li id=txtFirstNameJohann></li>
+                <li id=txtLastNameBach></li>
+                <li id=txtAddressJohann></li>
+                <li id=txtHireDateJohann></li>
+                <li id=txtPayRateJohann></li>
+            </ul>
+          </div>
+
+        <!--EMPLOYEE 3.-->  
+          <div id= "Employee-Record-3">
+            <h3>Employee record 3</h3>
+              <ul>
+                  <li id=txtFirstNameWolfgang></li>
+                  <li id=txtLastNameMozart></li>
+                  <li id=txtAddressWolfgang></li>
+                  <li id=txtHireDateWolfgang></li>
+                  <li id=txtPayRateWolfgang></li>
+              </ul>
+          </div>    
+          
+        <!--Return link that sends you to WEB 231 landing page in new tab.-->  
+        <a class="return-home" target="_blank" href="https://sjeand.github.io/web-231/">Return</a>
+
+      </div>
+
+      <script>
+      // Data for Employee 1
+        let txtFirstNameLudwig = document.getElementById("txtFirstNameLudwig").innerHTML = "Ludwig";
+        let txtLastNameBeethoven = document.getElementById("txtLastNameBeethoven").innerHTML = "Beethoven";
+        let txtAddressLudwig = document.getElementById("txtAddressLudwig").innerHTML = "505 main street";
+        let txtHireDateLudwig = document.getElementById("txtHireDateLudwig").innerHTML = new Date().toLocaleDateString("en-US");
+        let txtPayRateLudwig = document.getElementById("txtPayRateLudwig").innerHTML = ((18.899).toFixed(1));
+      </script>
+
+      <script>
+      //Data for Employee 2
+        let txtFirstNameJohann = document.getElementById("txtFirstNameJohann").innerHTML = "Johann";
+        let txtLastNameBach = document.getElementById("txtLastNameBach").innerHTML = "Bach";
+        let txtAddressJohann = document.getElementById("txtAddressJohann").innerHTML = "512 main street";
+        let txtHireDateJohann = document.getElementById("txtHireDateJohann").innerHTML = new Date().toLocaleDateString("en-US");
+        let txtPayRateJohann = document.getElementById("txtPayRateJohann").innerHTML = ((25.499).toFixed(1));
+      </script>
+
+      <script>
+        // Data for Employee 3
+        let txtFirstNameWolfgang = document.getElementById("txtFirstNameWolfgang").innerHTML = "Wolfgang";
+        let txtLastNameMozart = document.getElementById("txtLastNameMozart").innerHTML = "Mozart";
+        let txtAddressWolfgang = document.getElementById("txtAddressWolfgang").innerHTML = "600 main street";
+        let txtHireDateWolfgang = document.getElementById("txtHireDateWolfgang").innerHTML = new Date().toLocaleDateString("en-US");
+        let txtPayRateWolfgang = document.getElementById("txtPayRateWolfgang").innerHTML = ((50.099).toFixed(1));
+      </script>
+  
+
+    </body>
+
+    </html>

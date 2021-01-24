@@ -4,6 +4,10 @@
     Date: 01/12/2021
     Description: Style sheet 
 */
+body{
+  margin:0;
+  font-family: 'Oswald', verdana, arial, sans-serif;
+}
 
 /* card styling */
 
@@ -89,27 +93,7 @@
 /*more requirements*/
 
 /*card and container requirements*/
-
-#container{
-  padding: 10px;
-}
-
-#card-example{
-  width: 600px;
-  margin: 3% auto 0;
-}
-
 /*cards with forms requirements*/
-
-#container{
-  padding: 10px;
-}
-
-#card-example{
-  width: 600px;
-  margin: 3% auto 0;
-}
-
 /*forms with forms requirements*/
 
 #container{
@@ -117,6 +101,11 @@
 }
 
 #card-example{
+  width: 600px;
+  margin: 3% auto 0;
+}
+
+#form-example{
   width: 600px;
   margin: 3% auto 0;
 }

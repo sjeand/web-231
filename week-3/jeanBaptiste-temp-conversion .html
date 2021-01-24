@@ -1,0 +1,70 @@
+<!--
+  Title: jeanBaptiste-temp-conversion.html 
+  Author: Sarah Jean Baptiste
+  Date: 01/23/2021
+  Description: Temperature Conversion for web-231
+-->
+
+<!DOCTYPE html> 
+<html lang="en">
+
+<!--Document header starts here.-->
+<head> 
+  <title>WEB 231</title> 
+  <link rel="stylesheet" href="jeanBaptiste-temp-conversion .css" type="text/css">
+ 
+  <link rel="stylesheet" href="../global.css" type="text/css">
+  <link rel="preconnect" href="https://fonts.gstatic.com"> 
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">     
+</head>  
+
+<!--Document Body Starts here.-->
+<body> 
+
+<div id="container">
+<!--Place all HTML code underneath this div.-->
+
+  <h1 class ="app-header">Welcome to the Temperature Conversion App!</h1>
+
+<!--Form for Fahrenheit input.-->
+    <div id="form-example">
+        <div class="card">
+            <div class="card-title">Fahrenheit to Celsius Converter</div>
+            <div class="card-content">
+                <div class="form">
+                    <div class="form-field">
+                        <label for="txtFahrenheit">Fahrenheit value:</label>
+                        <input type="text" class="input" id="txtFahrenheit" name="fahrenheit">
+                    </div>
+<!--Button will covert Fahrenheit to Celsius onclick.-->
+                    <div class="form-field">
+                        <button  onclick= "myFunction()" type="button" class="btn btn-primary full-width" id="btn">Convert Temperature</button>
+                    </div>
+                </div>       
+             </div>
+        </div>
+    </div>
+<!--Card that will show results for Celsius-->
+    <div id="form-results-example">
+        <div class="card">
+            <div class="card-title">Conversions Results</div>
+            <div class="card-content" id="results"></div>
+        </div>
+    </div>
+
+ <!--Return link that sends you to WEB 231 landing page in new tab.-->  
+ <a class="return-home" target="_blank" href="https://sjeand.github.io/web-231/">Return</a>
+
+<script>
+ // Function to change Fahrenheit to Celsius and display results in card below.
+  function myFunction() {
+      let fahrenheit = document.getElementById("txtFahrenheit").value;
+        let Celsius = ((parseFloat(fahrenheit) -32) /1.8).toFixed(2);
+        document.getElementById('results').innerHTML = Celsius;
+
+    }
+</script>
+
+
+</body> 
+</html> 

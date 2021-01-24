@@ -5,12 +5,13 @@
     Description: Style sheet for assignment 3.2
 */
 
+/* Results Styling */
 #results{
     text-align: center;
     font-size: 28px;
 }
 
+/* App-header styling */
 .app-header{
     text-align: center;
 }
-)

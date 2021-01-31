@@ -3,10 +3,18 @@
     Author: Sarah Jean Baptiste
     Date: 01/12/2021
     Description: Style sheet 
-*/
+/*
+
+/*body styling*/
 body{
   margin:0;
   font-family: 'Oswald', verdana, arial, sans-serif;
+}
+
+/* App-header styling */
+.app-header{
+  text-align: center;
+  font-weight: 400;
 }
 
 /* card styling */
@@ -39,10 +47,10 @@ body{
 
 /*btn*/
 .btn{
-  border:none;
+  border: none;
   text-align: center;
   text-decoration: none;
-  display:inline-block;
+  display: inline-block;
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
@@ -116,18 +124,18 @@ body{
 }
 
 /*Return-home anchor styling.*/
-#return-home{
+.return-home{
   color:#4f3674;
   text-decoration: none;
 }
 
 /*Return-home anchor on hover will have background of d6a800, font color of 4f3674*/
-#return-home a :hover{
+.return-home a :hover{
   background-color: #4f3674;
   color:#d6a800
 }
 
 /*Return-home anchor on visited will have text color of 3c275a*/
-#return-home a :visited{
+.return-home a :visited{
     color:#3c275a
 }

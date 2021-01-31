@@ -1,0 +1,83 @@
+<!--
+  Title: assignment 4.2
+  Author: Sarah Jean Baptiste
+  Date: 01/28/2021
+  Description: number guessing game
+-->
+
+<!DOCTYPE html> 
+<html lang="en">
+
+<!--Document header starts here.-->
+<head> 
+  <title>WEB 231 - Enterprise JavaScript I</title> 
+  <link rel="stylesheet" href="jeanBaptiste-number-game.css" type="text/css">
+  <link rel="stylesheet" href="../global.css" type="text/css">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com"> 
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">     
+</head>  
+
+<!--Document Body Starts here and will create random number at pageload.-->
+<body onload="pageload()"> 
+
+<div id="container">
+ <!--Place all HTML code underneath this div.-->
+
+  <h1 class ="app-header">Welcome to the numbers game!</h1>
+
+ <!--Form for guessing random number input.-->
+    <div id="form-example">
+        <div class="card">
+            <div class="card-title">Pick a number between 1 and 10</div>
+            <div class="card-content">
+                <div class="form">
+                    <div class="form-field">
+                        <label for="txtMyNumber">Guess the number:</label>
+                        <input type="text" class="input" id="txtMyNumber" name="myNumber">
+                    </div>
+ <!--Button will generate a random number onclick.-->
+                    <div class="form-field">
+                        <button  onclick= "getRandom()" type="button" class="btn btn-primary full-width" id="btnSubmit">Submit</button>
+                    </div>
+                </div>       
+             </div>
+        </div>
+    </div>
+ <!--Card that will show results for random number-->
+    <div id="form-results-example">
+        <div class="card">
+            <div class="card-title">Results</div>
+            <div class="card-content" id="results"></div>
+        </div>
+
+      <!--Return link that sends you to WEB 231 landing page.-->  
+      <br>
+      <a class="return-home" href="https://sjeand.github.io/web-231/">Return</a>
+
+    </div>
+
+</div>
+
+  <script>
+       // Function to generate a number between 1 and 10.
+      let results;
+      const rnd = Math.floor((Math.random() * 10) + 1); 
+      function getRandom() {
+          let myNumber = document.getElementById("txtMyNumber").value;
+        
+          if (myNumber > rnd){
+            results = "The number is less than " + myNumber
+           }
+           else if (myNumber < rnd){
+            results = "The number is greater than " + myNumber
+           }
+           else 
+              results = "Congratulations! You picked the correct number! ";
+            document.getElementById("results").innerHTML = results
+        }
+    
+   </script>
+
+</body> 
+</html> 

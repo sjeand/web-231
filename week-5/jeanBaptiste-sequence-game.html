@@ -1,0 +1,109 @@
+<!--
+  Title: assignment 5.2
+  Author: Sarah Jean Baptiste
+  Date: 02/07/2021
+  Description: Sequence Game
+-->
+
+<!DOCTYPE html> 
+<html lang="en">
+
+<!--Document header starts here.-->
+<head> 
+  <title>WEB 231 - Enterprise JavaScript I</title> 
+  <link rel="stylesheet" href="jeanBaptiste-sequence-game.css" type="text/css">
+  <link rel="stylesheet" href="../global.css" type="text/css">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com"> 
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">     
+</head>  
+
+<body onload="pageLoad()">
+ <!--Place all HTML code underneath this div.-->
+  <div id="container">
+  <h1 class ="app-header">Welcome to the sequence game!</h1>
+
+ <!--Form for sequence selection.-->
+    <div id="form-example">
+        <div class="card">
+            <div class="card-title">Sequence Selection Form</div>
+            <div class="card-content">
+                <div class="form">
+                    <div class="form-field">
+                        <label id="form-field" for="sequence">Choose a number sequence</label>
+                        <select class="drop-down-menu" id="sequence">
+                            <option value="select">--Select--</option>
+                            <option value="fibonacci">Fibonacci Sequence</option>
+                            <option value="even">Even Numbers</option>
+                            <option value="odd">Odd Numbers</option>
+                        </select>
+                    </div>
+ <!--Button will show number sequence based on options on onclick.-->
+                    <div class="form-field">
+                        <button  onclick= "sequence()" type="button" class="btn btn-primary full-width" id="btnDisplaySequence">Display Sequence</button>
+                    </div>
+                </div>       
+             </div>
+        </div>
+    </div>
+  </div>
+ <!--Card that will show results for sequence based on option selected.-->
+    <div id="form-results-example">
+        <div class="card">
+            <div class="card-title">Sequence Results</div>
+            <div class="card-content" id="results"></div>
+        </div>
+
+      <!--Return link that sends you to WEB 231 landing page.-->  
+      <br>
+    <div>
+      <a class="return-home" href="https://sjeand.github.io/web-231/">Return</a>
+    </div>
+</div>
+      
+    <script>
+
+      // Onclick will display a sequence based on the option the user chooses.
+      function sequence(){
+        let choice = document.getElementById("sequence").value;
+        if (choice === "select"){
+          //Alert will be displayed when no option is selected.
+        alert("invalid selection, please try again!");
+        }
+      // If fibonacci is chosen, fibonacci sequence will display below until 40.
+          else if (choice === "fibonacci"){
+           let num1 = 0;
+           let num2 = 1;
+           let next;
+           let fibonacciSequenceText = "" + num1 + ", " + num2 + ", ";
+
+              while(num1 + num2 < 40){
+                  next = num1 + num2;
+                  num1 = num2;
+                  num2 = next;
+                  fibonacciSequenceText += num2 + ", ";
+                }document.getElementById("results").innerHTML = fibonacciSequenceText.slice(0, -2);
+      //If even is chosen, even sequence will be displayed until 20.
+              }else if (choice === "even"){
+                  let num1 = 2;
+                  let evenText = num1 + ", "
+                  do
+                  {
+                      num1 = num1 + 2;
+                      evenText += num1 + ", ";
+                  }while(num1 < 20)
+                  document.getElementById("results").innerHTML = evenText.slice(0, -2);
+      // If odd is chosen, odd number sequence will be displayed until 20.
+                }else {
+                let oddText = "";
+                for (let num1 = 1; num1 < 20; num1 += 2){
+                    oddText += num1 + ", ";
+                }
+                document.getElementById("results").innerHTML = oddText.slice(0, -2);
+            }
+      }
+   
+
+    </script>
+</body>
+</html>

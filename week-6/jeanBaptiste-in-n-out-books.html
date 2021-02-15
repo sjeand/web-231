@@ -1,0 +1,171 @@
+<!--
+  Title: assignment 6.2
+  Author: Sarah Jean Baptiste
+  Date: 02/11/2021
+  Description: In-N-Out-Books
+-->
+
+<!DOCTYPE html> 
+<html lang="en">
+
+<!--Document header starts here.-->
+<head> 
+  <title>WEB 231 - Enterprise JavaScript I</title> 
+  <link rel="stylesheet" href="jeanBaptiste-in-n-out-books.css" type="text/css">
+  <link rel="stylesheet" href="../global.css" type="text/css">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com"> 
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">     
+</head>  
+
+<body>
+ <!--Place all HTML code underneath this div.-->
+  <div id="container">
+  <h1 class ="app-header">Welcome to In-N-Out Books</h1>
+
+ <!--Form for Favorite selection.-->
+    <div id="form-example">
+        <div class="card">
+            <div class="card-title">My Favorites</div>
+            <div class="card-content">
+                <div class="form">
+                    <div class="form-field">
+                        <label id="form-field">Choose a listing</label>
+                        <select class="drop-down-menu" id="favoriteList">
+                            <!--Drop down to show choice for onclick.-->
+                            <option value="select">--Select--</option>
+                            <option value="books">Top 3 Favorite Books</option>
+                            <option value="authors">Top 3 Authors</option>
+                        </select>
+                    </div>
+        <!--Button will show results based on dropdown on onclick.-->
+                    <div class="form-field">
+                        <button  onclick= "getListing()" type="button" class="btn btn-primary full-width" id="btnDisplayListing">Display Listing</button>
+                    </div>
+                </div>       
+             </div>
+        </div>
+            <!--Return link that sends you to WEB 231 landing page.-->  
+            <br>
+            <div>
+              <a class="return-home" href="https://sjeand.github.io/web-231/">Return</a>
+            </div>
+    </div>
+  </div>
+ <!--Card that will show results based on option selected.-->
+    <div id="form-results-example">
+        <div class="card" id ='favorite-books'>
+            <div class="card-title">Top 3 Favorite Books</div>
+            <div class="card-content" id= 'books'>
+        <!--Table one to show favorite books.-->
+                <table>
+                      <tr>
+                        <th>ISBN</th>
+                        <th>Title</th>
+                        <th>Pages</th>
+                      </tr>
+                      <tr>
+                          <td id = "txtDragonsLoveTacosISBN"></td>
+                          <td id = "txtDragonsLoveTacosTitle"></td>
+                          <td id = "txtDragonsLoveTacosPages"></td>
+                      </tr>
+                      <tr>
+                        <td id = "txtLlamaLlamaRedPajamasISBN"></td>
+                        <td id = "txtLlamaLlamaRedPajamasTitle"></td>
+                        <td id = "txtLlamaLlamaRedPajamasPages"></td>
+                    </tr>
+                    <tr>
+                        <td id = "txtHopOnPopISBN"></td>
+                        <td id = "txtHopOnPopTitle"></td>
+                        <td id = "txtHopOnPopPages"></td>
+                    </tr>
+                </table>
+                </div>
+            </div>
+            <div class="card" id ='favorite-authors'>
+                <div class="card-title">Top 3 Favorite Authors</div>
+                <div class="card-content" id = 'authors'>  
+        <!--Table two will show favorite authors.-->
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>Genre</th>
+                        </tr>
+                        <tr>
+                            <td id = "txtMoWillemsName"></td>
+                            <td id = "txtMoWillemsGenre"></td>
+                        </tr>
+                        <tr>
+                            <td id = "txtAnnaDewdneyName"></td>
+                            <td id = "txtAnnaDewdneyGenre"></td>
+                        </tr>
+                        <tr>
+                            <td id = "txtOliverJeffersName"></td>
+                            <td id = "txtOliverJeffersGenre"></td>
+                        </tr>   
+                    </table>
+            </div>
+        </div>
+
+</div>
+      
+    <script>
+//Favorite books information to fill table one. 
+        let book1 = {isbn: '978-08035736801', title: 'Dragons Love Tacos', pages: 40}
+        let book2 = {isbn: '978-045141474575', title: 'Llama Llama Red Pajamas', pages: 34}
+        let book3 = {isbn: '978-0394800295', title: 'Hop on Pop', pages: 72}
+
+//Favorite authors infromation to fill table two.
+        let author1 = {name: 'Mo Willems', genre: "Children's Literature"}
+        let author2 = {name: 'Anna Dewdney', genre: "Children's Literature"}
+        let author3 = {name: 'Oliver Jeffers', genre: "Children's Literature"}
+      
+
+        let books = document.getElementById('favorite-books');
+        let authors = document.getElementById('favorite-authors');
+
+//Set display to none for both tables.
+        books.style.display = 'none';
+        authors.style.display = 'none';
+
+//Ids to link to book information to table.
+        document.getElementById('txtDragonsLoveTacosISBN').innerHTML = book1.isbn;
+        document.getElementById('txtDragonsLoveTacosTitle').innerHTML = book1.title;
+        document.getElementById('txtDragonsLoveTacosPages').innerHTML = book1.pages;
+
+        document.getElementById('txtLlamaLlamaRedPajamasISBN').innerHTML = book2.isbn;
+        document.getElementById('txtLlamaLlamaRedPajamasTitle').innerHTML = book2.title;
+        document.getElementById('txtLlamaLlamaRedPajamasPages').innerHTML = book2.pages;
+
+        document.getElementById('txtHopOnPopISBN').innerHTML = book3.isbn;
+        document.getElementById('txtHopOnPopTitle').innerHTML = book3.title;
+        document.getElementById('txtHopOnPopPages').innerHTML = book3.pages;
+
+        document.getElementById('txtMoWillemsName').innerHTML = author1.name;
+        document.getElementById('txtMoWillemsGenre').innerHTML = author1.genre;
+
+        document.getElementById('txtAnnaDewdneyName').innerHTML = author2.name;
+        document.getElementById('txtAnnaDewdneyGenre').innerHTML = author2.genre;
+
+        document.getElementById('txtOliverJeffersName').innerHTML = author3.name;
+        document.getElementById('txtOliverJeffersGenre').innerHTML = author3.genre; 
+
+// Function to show table based on user choice and show nothing if '--select--' is chosen.
+        function getListing(){
+            let choice = document.getElementById('favoriteList').value;
+            if(choice === 'books'){
+                books.style.display = 'block';
+                authors.style.display = 'none';
+            }else if(choice === 'authors'){
+                authors.style.display = 'block';
+                books.style.display = 'none';
+                
+            }else{
+                books.style.display = 'none';
+                authors.style.display = 'none';
+            }
+        }
+     
+    </script>
+</body>
+</html>

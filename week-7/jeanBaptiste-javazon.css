@@ -1,0 +1,38 @@
+/**
+    Title: jeanBaptiste-sequence-game.css
+    Author: Sarah Jean Baptiste
+    Date: 02/07/2021
+    Description: Style sheet 
+/*
+
+/*Table styling*/
+table{
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+/*Table header styling*/
+th{
+    border: 1px solid #ddd;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4F3674;
+    color:white; 
+    padding-left: 6px;
+}
+
+/*Table row styling*/
+td{
+    border: 1px solid #ddd;
+    padding: 6px;
+
+}
+
+/*Table row hover styling*/
+tr:hover{ 
+    background-color: #d6a800;
+    color: #4f3674;
+    cursor: pointer;
+}

@@ -1,0 +1,17 @@
+/**
+    Title: jeanBaptiste-alphabet-game.css
+    Author: Sarah Jean Baptiste
+    Date: 02/27/2021
+    Description: Style sheet 
+/**
+
+/*Letter styling*/
+#letters{
+    font-size: 28px;
+    text-align: center;
+}
+/*Alphabet letter styling*/
+#alphabet-letter{
+    font-size: 28px;
+    text-align: center;
+}

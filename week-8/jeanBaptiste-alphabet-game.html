@@ -1,0 +1,112 @@
+<!--
+  Title: assignment 8.2
+  Author: Sarah Jean Baptiste
+  Date: 02/27/2021
+  Description: Alphabet Game
+-->
+
+<!DOCTYPE html> 
+<html lang="en">
+
+<!--Document header starts here.-->
+<head> 
+  <title>WEB 231 - Enterprise JavaScript I</title> 
+  <link rel="stylesheet" href="jeanBaptiste-alphabet-game.css" type="text/css">
+  <link rel="stylesheet" href="../global.css" type="text/css">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com"> 
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">     
+</head>  
+
+<body onload="pageLoad()">
+    <!--Place all HTML code underneath this div.-->
+    <div id="container">
+    <h1 class ="app-header">Welcome to the Alphabet Game!</h1>
+
+        <!--Form for user input.-->
+        <div id="form-example">
+            <div class="card">
+                <div class="card-title">Alphabet Letter Form</div>
+                <div class="card-content">
+                    <div class="form">
+                        <div class="form-field">
+                            <form>
+                                <label id="form-field">Alphabet Letter Position</label>
+                                <input type = "text" id= "txtPosition" class= "input">
+                            </form>  
+                        </div>
+                        <!--Button will display results based on user input onclick.-->
+                        <div class="form-field">
+                            <button  onclick= "btnFindLetter()" type="button" class="btn btn-primary full-width" id="btnFindLetter">Find Letter</button>
+                        </div>
+                    </div>       
+                </div>
+            </div>
+            <br>
+            <!--Return link to landing page-->
+                <div>
+                    <a class="return-home" href="https://sjeand.github.io/web-231/">Return</a>
+                </div>
+        </div>
+    
+        <!--Card that will Letters in the alphabet.-->
+        <div id="form-results-example">
+            <div class="card" id="alphabet">
+                <div class="card-title" >Letters in the Alphabet</div>
+                <div class="card-content" id="letters"></div>
+            </div>
+            <!--Card that will show results based on users input.-->
+            <div class="card" id="results">
+                <div class="card-title">Results</div>
+                <div class="card-content" id="alphabet-letter"></div>
+            </div>
+        </div>
+    </div>
+        
+        <script>
+
+            // Initialize onLoad function.
+            function pageLoad() {}
+
+            //Letters in the alphabet array. 
+            let alphabet = [ "A", "B", "C", "D", 
+                            "E", "F", "G", "H", 
+                            "I", "J", "K", "L", 
+                            "M", "N", "O", "P", 
+                            "Q", "R", "S", "T", 
+                            "U", "V", "W", "X", 
+                            "Y", "Z" ];
+
+            let alphabetOutput = "";
+
+            for(const letter in alphabet){
+                alphabetOutput += alphabet[letter] + ", ";
+            }
+            //Capture letters and slice to remove extra comma.
+            document.getElementById("letters").innerHTML = alphabetOutput.slice(0, -2);
+
+            //Button will display results based on user input onclick.
+            function btnFindLetter() {
+                let pos = document.getElementById("txtPosition").value;
+
+                // Capture input value and subtract one to start the array on number 1.
+                let letter = alphabet[pos - 1];   
+
+                // Find letter based on array
+                let div = document.getElementById("alphabet-letter");
+            
+                // If user types in a number not in alphabet, display message.
+                if (letter === undefined){ 
+                    document.getElementById("alphabet-letter").innerHTML =
+                    "There are not " + pos + " letters in the alphabet";
+                // If user types in a number in alphabet, display message.   
+                }else {
+                    document.getElementById("alphabet-letter").innerHTML =
+                    letter + " is at position " + pos + " in the alphabet";
+
+                }
+            }
+            
+        </script>
+</body>
+</html>

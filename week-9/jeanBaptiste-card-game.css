@@ -1,0 +1,17 @@
+/**
+    Title: jeanBaptiste-card-game.css
+    Author: Sarah Jean Baptiste
+    Date: 03/07/2021
+    Description: Style sheet 
+**/
+
+.player-card {
+    text-align: center;
+}
+
+#player-card {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+    padding: 10px;
+}
